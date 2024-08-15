@@ -79,8 +79,8 @@ public class Metodos {
        double porcentajeOcupadas=0;
        double porcentajeSucias=0;
        double totalGanancias=0;
-       for(int i=0;i<hotel.length;i++){
-           for(int j=0;i<hotel.length;j++){
+       for(int i=0;i<3;i++){
+           for(int j=0;j<3;j++){
               if(hotel[i][j].getEstado().equals("Libre")) {
                     acumuladorLibres=acumuladorLibres+1;
                     porcentajeLibres=acumuladorLibres/9;
