@@ -78,22 +78,26 @@ public class Metodos {
        double porcentajeLibres=0;
        double porcentajeOcupadas=0;
        double porcentajeSucias=0;
+       double totalGanancias=0;
        for(int i=0;i<hotel.length;i++){
-              if(hotel[i][0].equals("Libre")) {
+           for(int j=0;i<hotel.length;j++){
+              if(hotel[i][j].getEstado().equals("Libre")) {
                     acumuladorLibres=acumuladorLibres+1;
                     porcentajeLibres=acumuladorLibres/9;
 
-                } else if (hotel[i][0].equals("Ocupada")) {
+                } else if (hotel[i][j].getEstado().equals("Ocupada")) {
                     acumuladorOcupadas=acumuladorOcupadas+1;
                     porcentajeOcupadas=acumuladorOcupadas/9;
-                } else if (hotel[i][0].equals("Sucia")) {
+                    totalGanancias=acumuladorOcupadas*hotel[i][j].getPrecio();
+                } else if (hotel[i][j].getEstado().equals("Sucia")) {
                     acumuladorSucias=acumuladorSucias+1;
                     porcentajeSucias=acumuladorSucias/9;
                 }
-          
+           }
    }
     JOptionPane.showMessageDialog(null,"El total de habitaciones libres es:"+acumuladorLibres+" y el porcentaje es : "+porcentajeLibres);  
     JOptionPane.showMessageDialog(null,"El total de habitaciones ocupadas es:"+acumuladorOcupadas+" y el porcentaje es : "+porcentajeOcupadas);
     JOptionPane.showMessageDialog(null,"El total de habitaciones sucias es:"+acumuladorSucias+" y el porcentaje es : "+porcentajeSucias);
+    JOptionPane.showMessageDialog(null,"El total de ganacias es:"+totalGanancias);
 }
 }
